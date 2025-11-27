@@ -34,8 +34,6 @@ sliderImages: string[] = [
   showProductModal = false;
   showCartModal = false;
   successMessage = '';
-
-  // 👇 ESTA ES LA QUE FALTABA
   quantityToAdd = 1;
 
   // Estados
@@ -62,7 +60,7 @@ sliderImages: string[] = [
       (this.currentSlide - 1 + this.sliderImages.length) % this.sliderImages.length;
   }
 
-  // ========== CATEGORÍAS Y PRODUCTOS ==========
+  // CATEGORÍAS Y PRODUCTOS //
   loadCategories(): void {
     this.loadingCategories = true;
     this.productService.getCategories().subscribe({
@@ -106,7 +104,7 @@ sliderImages: string[] = [
     );
   }
 
-  // ========== MODAL PRODUCTO ==========
+  // MODAL PRODUCTO //
   openProduct(product: Product): void {
     this.selectedProduct = product;
     this.showProductModal = true;
@@ -137,7 +135,7 @@ sliderImages: string[] = [
         : `${this.quantityToAdd} unidades agregadas al carrito`;
   }
 
-  // ========== CARRITO ==========
+  //CARRITO//
   openCart(): void {
     this.showCartModal = true;
   }
@@ -168,7 +166,7 @@ sliderImages: string[] = [
     this.closeCart();
   }
 
-  // ========== UTILIDADES ==========
+  //UTILIDADES//
   formatCurrency(value: number): string {
     return '$' + value.toFixed(2);
   }
